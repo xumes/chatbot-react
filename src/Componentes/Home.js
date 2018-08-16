@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { Button } from 'reactstrap';
 
 class Home extends Component {
     render() {
         return (
             <div className='home'>
                 <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
+                    Simples aplicação de chatbot criada em React.js <p>
+                    </p>para funcionar com o IBM Watson Assistant.
                  </p>
-                <Button color="danger">Danger!</Button>
+                
             </div>
 
         )
