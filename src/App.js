@@ -11,8 +11,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Home />
-        <Chatbot />
+
+        <div className='conteudo'>
+          <Home />
+          <Chatbot />
+        </div>
+
         <Footer />
       </div>
     );
