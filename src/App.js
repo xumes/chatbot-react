@@ -9,14 +9,10 @@ import Chatbot from './Componentes/Chatbot';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="conteudo">
         <Header />
-
-        <div className='conteudo'>
-          <Home />
-          <Chatbot />
-        </div>
-
+        <Home />
+        <Chatbot />
         <Footer />
       </div>
     );
