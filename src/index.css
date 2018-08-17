@@ -3,3 +3,33 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.header {
+  background: blue;
+  text-align: center;
+  color: aliceblue;
+  padding:  60px;
+}
+
+.home {
+  flex: 70%;
+  background-color: aqua;
+  padding: 20px;
+}
+
+.chatbot {
+  flex: 30%;
+  background-color: cadetblue;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: red;
+}
+
+.conteudo {
+  display: flex;
+  flex-wrap: wrap;
+}
