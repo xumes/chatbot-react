@@ -1,7 +1,7 @@
 .chat-conteudo {
     display: grid;
-    grid-template-rows: 40px auto 60px;
-    
+    grid-template-rows: 40px auto 40px;
+    padding: 8px;
     height: calc(100vh - 170px);
 }
 
