@@ -1,9 +1,12 @@
 import React from 'react'
+import {Alert} from 'reactstrap'
 
 const ChatHeader = props => {
     return (
         <div className='chat-header'>
-            Chatbot
+            <Alert color='dark'>
+                <h2>Chatbot</h2>
+            </Alert>
         </div>
     )
 }
