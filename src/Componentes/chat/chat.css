@@ -1,12 +1,12 @@
 .chat-conteudo {
     display: grid;
-    grid-template-rows: 40px auto 40px;
+    grid-template-rows: 80px auto 80px;
     padding: 8px;
     height: calc(100vh - 170px);
 }
 
 .chat-header {
-
+    text-align: center;
 }
 
 .chat-conversa {
