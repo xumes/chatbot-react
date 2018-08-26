@@ -4,6 +4,8 @@
 /node_modules
 /functions/node_modules
 
+/functions/.env
+
 # testing
 /coverage
 
