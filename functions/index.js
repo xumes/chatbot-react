@@ -34,6 +34,6 @@ exports.conversa = functions.https.onRequest((req, res) => {
 })
 
 const trataResposta = (payload, resposta) => {
-    console.log('watson disse: ', resposta);
+    console.log('watson disse: ', resposta.output.text[0]);
     return resposta;
 }
