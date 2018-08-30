@@ -1,6 +1,6 @@
 
 const INITIAL_STATE = {
-    mensagens = []
+    mensagens : []
 }
 
 export default function chat(state = INITIAL_STATE, action = {}) {
