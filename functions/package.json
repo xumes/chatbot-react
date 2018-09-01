@@ -10,8 +10,10 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "firebase-admin": "~6.0.0",
-    "firebase-functions": "^2.0.3"
+    "firebase-functions": "^2.0.3",
+    "watson-developer-cloud": "^3.9.0"
   },
   "devDependencies": {
     "eslint": "^4.12.0",
