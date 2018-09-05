@@ -4,20 +4,20 @@ import { connect } from 'react-redux'
 
 class ChatConversa extends Component {
 
-    renderMensagem(msg, autor) {
+    renderMensagem(msg, k) {
         return (
-            <div>
+            <div key={k}>
                 {
-                    autor == 'user' && <span>
+                    msg.origem === 'user' && <span>
                         <Badge color='primary'>você disse:</Badge>
-                        <Alert color='primary'>{msg}</Alert>
+                        <Alert color='primary'>{msg.texto}</Alert>
                     </span>
                 }
 
                 {
-                    autor == 'bot' && <span>
+                    msg.origem === 'bot' && <span>
                         <Badge color='warning'>chatbot disse:</Badge>
-                        <Alert color='warning'>{msg}</Alert>
+                        <Alert color='warning'>{msg.texto}</Alert>
                     </span>
                 }
             </div>
@@ -28,8 +28,8 @@ class ChatConversa extends Component {
         return (
             <div className='chat-conversa'>
                 {
-                    this.props.mensagens.map(key => {
-                        return this.renderMensagem(key, 'user')
+                    Object.keys(this.props.mensagens).map(key => {
+                        return this.renderMensagem(this.props.mensagens[key], key)
                     })
                 }
             </div>
