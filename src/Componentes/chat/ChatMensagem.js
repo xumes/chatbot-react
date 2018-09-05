@@ -14,7 +14,11 @@ class ChatMensagem extends Component {
     inputEnviaTexto(e){
         if (e.keyCode === 13) {
             console.log(e.target.value)
-            this.props.enviaTexto(e.target.value)
+            const mensagem = {
+                texto: e.target.value,
+                origem: 'user'
+            }
+            this.props.enviaTexto(mensagem)
             e.target.value = ''
         }
     }
