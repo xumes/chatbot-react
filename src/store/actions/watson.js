@@ -31,7 +31,7 @@ export const conversaWatson = ((mensagem, contexto) => {
         //chama o backend do watson (Firebase cloud functions)
         const url = 'https://us-central1-chatbot-em-react.cloudfunctions.net/conversa'
         axios
-            .post(url, {mensagem, contexto})
+            .get(url)
             .then((data) => dispatch(conversaWatsonSucess(data)))
             .catch(() => dispatch(conversaWatsonError()))
     }
