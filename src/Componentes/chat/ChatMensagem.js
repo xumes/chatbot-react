@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {enviaMensagem} from './../../store/actions/chat'
+import { enviaMensagem } from './../../store/actions/chat'
+import { conversaWatson } from './../../store/actions/watson'
 
 class ChatMensagem extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class ChatMensagem extends Component {
         this.inputEnviaTexto = this.inputEnviaTexto.bind(this)
     }
 
-    inputEnviaTexto(e){
+    inputEnviaTexto(e) {
         if (e.keyCode === 13) {
             console.log(e.target.value)
             const mensagem = {
@@ -19,6 +20,7 @@ class ChatMensagem extends Component {
                 origem: 'user'
             }
             this.props.enviaTexto(mensagem)
+            this.props.conversaWatson(mensagem)
             e.target.value = ''
         }
     }
@@ -40,7 +42,8 @@ class ChatMensagem extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        enviaTexto: (msg) => dispatch(enviaMensagem(msg))
+        enviaTexto: (msg) => dispatch(enviaMensagem(msg)),
+        conversaWatson: (msg) => dispatch(conversaWatson(msg, ''))
     }
 }
 
