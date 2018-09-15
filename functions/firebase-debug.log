@@ -1,0 +1,24 @@
+[debug] [2018-09-15T23:19:14.012Z] ----------------------------------------------------------------------
+[debug] [2018-09-15T23:19:14.016Z] Command:       /usr/local/Cellar/node@8/8.9.4/bin/node /usr/local/opt/node@8/bin/firebase functions:shell
+[debug] [2018-09-15T23:19:14.016Z] CLI Version:   4.2.0
+[debug] [2018-09-15T23:19:14.016Z] Platform:      darwin
+[debug] [2018-09-15T23:19:14.016Z] Node Version:  v8.9.4
+[debug] [2018-09-15T23:19:14.017Z] Time:          Sat Sep 15 2018 20:19:14 GMT-0300 (-03)
+[debug] [2018-09-15T23:19:14.017Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-15T23:19:14.032Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-15T23:19:14.032Z] > authorizing via signed-in user
+[debug] [2018-09-15T23:19:14.034Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/chatbot-em-react  
+ 
+[debug] [2018-09-15T23:19:15.037Z] <<< HTTP RESPONSE 200
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-09-15T23:19:16.235Z] Fetching environment
+[debug] [2018-09-15T23:19:16.239Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/chatbot-em-react  
+ 
+[debug] [2018-09-15T23:19:17.201Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T23:19:17.201Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1052353360560:getServerAppConfig  
+ 
+[debug] [2018-09-15T23:19:17.513Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T23:19:17.513Z] Starting @google-cloud/functions-emulator
+[debug] [2018-09-15T23:19:19.599Z] Parsing function triggers
+[info] ✔  functions: conversa
