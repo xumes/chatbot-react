@@ -19,6 +19,10 @@ class ChatMensagem extends Component {
                 texto: e.target.value,
                 origem: 'user'
             }
+            let contexto = {}
+            if (this.props.resposta.data && this.props.resposta.data.context){
+                contexto = this.props.resposta.data.context
+            }
             this.props.enviaTexto(mensagem)
             this.props.conversaWatson(mensagem)
             e.target.value = ''
@@ -47,4 +51,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ChatMensagem)
+const mapStateToProps = (state) => {
+    return {
+        resposta: state.watson.respostas
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatMensagem)

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import {enviaMensagem} from './chat'
+import { enviaMensagem } from './chat'
 
 export const conversaWatsonRequest = () => {
     return {
@@ -33,7 +33,7 @@ export const conversaWatson = ((mensagem, contexto) => {
         //chama o backend do watson (Firebase cloud functions)
         const url = 'https://us-central1-chatbot-em-react.cloudfunctions.net/conversa'
         axios
-            .post(url, {mensagem, contexto})
+            .post(url, { input: mensagem.texto, context: contexto })
             .then((data) => {
                 dispatch(conversaWatsonSucess(data))
                 const msg = {
