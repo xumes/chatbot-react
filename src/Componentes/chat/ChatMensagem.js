@@ -1,24 +1,31 @@
 import React, { Component } from 'react'
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {enviaMensagem} from './../../store/actions/chat'
+import { enviaMensagem } from './../../store/actions/chat'
+import { conversaWatson } from './../../store/actions/watson'
 
 class ChatMensagem extends Component {
     constructor(props) {
         super(props)
 
         this.inputEnviaTexto = this.inputEnviaTexto.bind(this)
+        this.props.conversaWatson("inicio", '')
     }
 
-    inputEnviaTexto(e){
+    inputEnviaTexto(e) {
         if (e.keyCode === 13) {
             console.log(e.target.value)
             const mensagem = {
                 texto: e.target.value,
                 origem: 'user'
             }
+            let contexto = {}
+            if (this.props.resposta.data && this.props.resposta.data.context){
+                contexto = this.props.resposta.data.context
+            }
             this.props.enviaTexto(mensagem)
+            this.props.conversaWatson(mensagem, contexto)
             e.target.value = ''
         }
     }
@@ -40,8 +47,15 @@ class ChatMensagem extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        enviaTexto: (msg) => dispatch(enviaMensagem(msg))
+        enviaTexto: (msg) => dispatch(enviaMensagem(msg)),
+        conversaWatson: (msg, contexto) => dispatch(conversaWatson(msg, contexto))
     }
 }
 
-export default connect(null, mapDispatchToProps)(ChatMensagem)
+const mapStateToProps = (state) => {
+    return {
+        resposta: state.watson.respostas
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatMensagem)
