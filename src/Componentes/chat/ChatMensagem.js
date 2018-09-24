@@ -10,6 +10,7 @@ class ChatMensagem extends Component {
         super(props)
 
         this.inputEnviaTexto = this.inputEnviaTexto.bind(this)
+        this.props.conversaWatson("inicio", '')
     }
 
     inputEnviaTexto(e) {
@@ -24,7 +25,7 @@ class ChatMensagem extends Component {
                 contexto = this.props.resposta.data.context
             }
             this.props.enviaTexto(mensagem)
-            this.props.conversaWatson(mensagem)
+            this.props.conversaWatson(mensagem, contexto)
             e.target.value = ''
         }
     }
@@ -47,7 +48,7 @@ class ChatMensagem extends Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         enviaTexto: (msg) => dispatch(enviaMensagem(msg)),
-        conversaWatson: (msg) => dispatch(conversaWatson(msg, ''))
+        conversaWatson: (msg, contexto) => dispatch(conversaWatson(msg, contexto))
     }
 }
 

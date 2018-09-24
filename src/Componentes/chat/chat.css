@@ -10,7 +10,7 @@
 }
 
 .chat-conversa {
-
+    overflow: auto;
 }
 
 .chat-mensagem {
